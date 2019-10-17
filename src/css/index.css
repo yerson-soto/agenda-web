@@ -1,0 +1,312 @@
+:root {
+    --fuenteUno: 'Raleway', sans-serif;
+    --fuenteDos: 'Montserrat', sans-serif;
+    --fuenteTres: 'Poppins', sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #d8896c;
+    background-attachment: fixed;
+    font-size: 1.6rem;
+}
+
+h1 {
+    font-family: var(--fuenteTres);
+    font-weight: lighter;
+    font-size: 4rem;
+    text-align: center;
+    color: white;
+    margin: 0;
+}
+
+h2 {
+    font-family: var(--fuenteDos);
+    font-weight: lighter;
+}
+
+p {
+    margin: 0;
+}
+
+.caja {
+    border-radius: 1rem;
+    padding: .5rem 2rem 3rem 2rem;    
+    box-shadow: 0px 3px 10px rgb(63, 63, 63);
+}
+
+@media (min-width: 768px) {
+    .caja {
+        padding-bottom: 1.5rem;
+    }
+}
+
+.btn {
+    font-family: var(--fuenteDos);
+    font-weight: normal;
+    color: white;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 1rem;
+    transition: background-color .2s ease;
+    outline: none;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: #067ab7;
+}
+
+.btn i {
+    margin-right: .7rem;
+}
+
+
+/*App*/
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.principal {
+    flex: 1;
+}
+
+.componente {
+    margin-bottom: 2rem;
+}
+
+.componente:last-of-type {
+    margin-bottom: 0;
+}
+
+.contenedor {
+    max-width: 80rem;
+    width: 95%; 
+    margin: 0 auto;
+}
+
+
+/*Header*/
+.site-header {
+    padding: 2rem;
+}
+
+
+
+/*Formulario*/
+.agregar {
+    background-color: #353b48;
+    margin-bottom: 4rem;
+}
+
+.agregar h2 {
+    color: white;
+    text-align: center;
+    margin: 2rem 3.5rem;
+}
+
+@media (min-width: 768px) {
+    .agregar h2 {
+        text-align: left;
+    }
+}
+
+ .form-agregar {
+    width: 85%;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .form-agregar {
+        width: 95%;
+    }
+}
+
+.campos {
+    display: grid;
+    grid-gap: 3rem;
+    padding: 0 2rem;
+}
+
+@media (min-width: 768px) {
+    .campos {
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 5rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.campo {
+    position: relative;
+}
+
+.campo input, .campo label {
+    color: white;
+    padding: 1rem 1rem .8rem 0;
+}
+
+.campo input {  
+    font-family: var(--fuenteDos);
+    letter-spacing: 0.15rem;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+}
+
+.campo label {
+    font-family: var(--fuenteUno);
+    letter-spacing: 0.18rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transition: .2s;
+}
+
+.campo input:focus ~ label,
+.campo input:valid ~ label {
+    font-size: 1.3rem;
+    color: #0097e6;
+    top: -1.8rem;
+    left: 0;
+}
+
+@media (min-width: 768px) {
+    .mensaje {
+        grid-column: 1 / 3;
+    }
+
+    .boton {
+        grid-column: 3 / 4;
+        text-align: right;
+    }
+}
+
+.btn-agregar {
+    width: 100%;
+    background-color: #0097e6;
+    
+}
+
+@media (min-width: 768px) {
+    .btn-agregar {
+        width: unset;
+    }
+}
+
+
+
+/*Mensaje*/
+.mensaje {
+    font-family: var(--fuenteDos);
+    text-align: center;
+    border-radius: 1rem;
+    padding: 1rem;
+    color: white;
+}
+
+.mensaje p::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-right: .7rem;
+}
+
+.success {
+    background-color: #48c54d;
+}
+
+.success p::before {
+    content: '\f058';
+}
+
+
+.error {
+    background-color: #f34a4a;
+}
+
+.error p::before {
+    content: '\f12a';
+}
+
+
+
+/*Listado*/
+.listar {
+    background-color: white;
+}
+
+.listar h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.listar ul {
+    font-family: var(--fuenteTres);
+    letter-spacing: .05rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    list-style: none;
+    padding: 1.5rem 0;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+
+/*Cabecera*/
+.cabecera {
+    font-size: 1.7rem;
+    background-color:#0097e6;
+}
+
+.cabecera li {
+    color: white;
+    
+}
+
+
+/*Contacto*/
+.contacto {
+    font-size: 1.6rem;
+    border: 1px dotted #d8896c;
+    border-radius: 10rem;
+}
+
+.contacto li span {
+    background-color: #34bf6f;
+    color: white;
+    font-size: 1.4rem;
+    border-radius: 10rem;
+    padding: .3rem 2rem;
+}
+
+
+
+
+/*Footer*/
+.site-footer {
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+.site-footer p {
+    font-family: var(--fuenteTres);
+    text-align: center;
+    color: white;
+    font-weight: lighter;
+}
+
+
+
